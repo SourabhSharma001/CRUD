@@ -14,4 +14,4 @@ Route::post('/users/store', [UserController::class, 'store']);
 Route::get('/users/edit/{id}', [UserController::class, 'edit']);
 Route::post('/users/update/{id}', [UserController::class, 'update']);
 Route::get('/users/delete/{id}', [UserController::class, 'delete']);
-Route::get('/user_home', [UserController::class, 'home']);
+Route::get('/home', [UserController::class, 'home']);
