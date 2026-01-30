@@ -1,7 +1,7 @@
 <div>
     <a href="/users/create">Add User</a>
 
-<table border="20">
+<table border="1">
 <tr>
 <th>Name</th><th>Age</th><th>DOB</th><th>Address</th><th>Action</th>
 </tr>
