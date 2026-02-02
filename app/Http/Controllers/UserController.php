@@ -37,8 +37,8 @@ class UserController extends Controller
         return redirect('/users');
     }
 
-    public function home($name){
-        $name = "Sourabh";
-        return view('user', ["name" => $name]);
-    }
+    // public function home($name){
+    //     $name = "Sourabh";
+    //     return view('user', ["name" => $name]);
+    // }
 }
