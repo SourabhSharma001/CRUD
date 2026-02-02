@@ -14,6 +14,7 @@ class UserDetail extends Model
     protected $fillable = [
         'name', 'age', 'dob', 'address',
     ];
+    
 }
 
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 // use Illuminate\Http\Request;
 use App\Models\UserDetail;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -37,8 +39,43 @@ class UserController extends Controller
         return redirect('/users');
     }
 
-    // public function home($name){
-    //     $name = "Sourabh";
-    //     return view('user', ["name" => $name]);
-    // }
+    
+
+public function ajaxStore(Request $request)
+{
+    $user = UserDetail::create($request->only(
+        'name','age','dob','address'
+    ));
+
+    return response()->json([
+        'id' => $user->id,
+        'name' => $user->name,
+        'age' => $user->age,
+        'dob' => Carbon::parse($user->dob)->format('d-m-Y'),
+        'address' => $user->address
+    ]);
+}
+
+public function ajaxUpdate(Request $request, $id)
+{
+    $user = UserDetail::findOrFail($id);
+    $user->update($request->only(
+        'name','age','dob','address'
+    ));
+
+    return response()->json([
+        'id' => $user->id,
+        'name' => $user->name,
+        'age' => $user->age,
+        'dob' => Carbon::parse($user->dob)->format('d-m-Y'),
+        'address' => $user->address
+    ]);
+}
+
+public function ajaxDelete($id)
+{
+    UserDetail::findOrFail($id)->delete();
+    return response()->json(['success' => true]);
+}
+
 }
