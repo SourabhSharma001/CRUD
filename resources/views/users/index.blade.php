@@ -54,6 +54,7 @@
         width: 50%;
         text-align: center;
         font-family: Arial, Helvetica, sans-serif;
+        border-coll
     }
 .add-btn {
     background: #22c55e;
