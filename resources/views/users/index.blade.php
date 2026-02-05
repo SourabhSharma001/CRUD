@@ -76,7 +76,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 .btn-save:hover {
-    background: #94a3b8;
+    background: #3b82f6;
 }
 .btn-edit {
     background: #2563eb;
@@ -154,6 +154,10 @@ function editRow(btn) {
 
     const row = btn.closest('tr');
     const cells = row.children;
+
+    activeId = row.getAttribute('data-id');
+    activeRow = row;
+    mode = 'edit';
 
     cells[0].innerHTML = `<input id="name" value="${cells[0].innerText}">`;
     cells[1].innerHTML = `<input id="age" type="number" value="${cells[1].innerText}">`;
